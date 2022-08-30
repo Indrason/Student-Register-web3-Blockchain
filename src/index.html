@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This web app is to store and retrive the student details using Ethereum, Metamask, Ganache, Truffle">
+    <meta name="author" content="Indrason">
+    
+    <title>Students Records</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="text-center my-4">
+        <h1>Students Records</h1>
+      </div>
+      
+      <hr>
+
+      <!-- Main menu with two buttons -->
+      <div class="text-center">
+        <button class="btn btn-lg btn-primary" type="button" onclick="App.btn_addStudent_menu()">Add Student</button> &emsp;&emsp;
+        <button class="btn btn-lg btn-primary" type="button" onclick="App.btn_viewStudent_menu()">View Student</button>
+      </div>
+
+      <hr>
+
+      <!-- Add Student section to add student details -->
+      <section id="addStudent">
+        <h4 class="text-center my-4"><u>Add New Student</u></h4>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-2">Roll Number</div>
+          <div class="col-md-5"><input type="number" id="new_roll" class="form-control"></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-2">Name</div>
+          <div class="col-md-5"><input type="text" id="new_name" class="form-control"></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-2">Address</div>
+          <div class="col-md-5"><textarea class="form-control" id="new_address" rows="3"></textarea></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-2">Percentage</div>
+          <div class="col-md-5"><input type="number" id="new_percentage" class="form-control"></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-3"><button type="button" class="btn btn-success form-control" onclick="App.btnAddStudent()">ADD</button></div>
+        </div>
+
+        <div id="add_err" class="text-center"></div>
+
+        <hr>
+      </section>
+
+      <!-- View Student section to show the details of the student -->
+      <section id="viewStudent">
+        <h4 class="text-center my-4"><u>View Student by Roll Number</u></h4>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-2">Roll Number</div>
+          <div class="col-md-5"><input type="number" id="view_roll" class="form-control"></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-3"><button type="button" class="btn btn-success form-control" onclick="App.btnViewStudent()">VIEW</button></div>
+        </div>
+
+        <div id="view_err" class="text-center"></div>
+
+        <div id="view_result">
+          <div class="row justify-content-center my-4">
+            <div class="col-md-6">
+              <b>Roll Number:</b> &emsp;&emsp; <label id="view_rollno"></label> <br>
+              <b>Name:</b> &emsp;&emsp; <label id="view_name"></label> <br> 
+              <b>Address:</b> &emsp;&emsp; <label id="view_address"></label> <br>
+              <b>Percentage:</b> &emsp;&emsp; <label id="view_percentage"></label> 
+            </div>
+          </div>
+        </div>
+
+        <hr>
+      </section>
+
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
