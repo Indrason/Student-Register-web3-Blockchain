@@ -81,7 +81,7 @@ App = {
         if (error) {
           console.log(error);
         }
-        account = accounts[0];
+        var account = accounts[0];
         // Calling checkStudent function to check whether the student has already exist or not
         App.contracts.StudentRegister.deployed().then(function (instance) {
 
@@ -95,7 +95,7 @@ App = {
             // Calling addStudent function to add the student details
             App.contracts.StudentRegister.deployed().then(function (instance) {
 
-              return instance.addStudent(parseInt(rollno), name, address, parseInt(percentage), { from: App.account });
+              return instance.addStudent(parseInt(rollno), name, address, parseInt(percentage), { from: account });
 
             }).then(function (result) {
               $('#add_err').text('Student Record Successfully Added');
